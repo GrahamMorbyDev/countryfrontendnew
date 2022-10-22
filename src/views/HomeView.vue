@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <full-screen-wrap>
+    <div>
+      <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-md flex items-center">
+          <img class="w-" src="@/assets/logo.png" alt="Country on the coast">
+        </div>
+        <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        </div>
+      </div>
+    </div>
+  </full-screen-wrap>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import fullScreenWrap from "@/layouts/fullScreenWrap";
 export default {
-  name: 'HomeView',
   components: {
-    HelloWorld
-  }
-}
+    fullScreenWrap
+  },
+  data() {
+    return {
+    };
+  },
+};
 </script>
+
+<style>
+</style>
