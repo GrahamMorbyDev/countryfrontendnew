@@ -17,6 +17,23 @@ const routes = [
     name: 'history',
     component: () => import(/* webpackChunkName: "about" */ '../views/HistoryView.vue')
   },
+
+
+  {
+    path: '/demo_register',
+    name: 'demo_register',
+    component: () => import(/* webpackChunkName: "about" */ '../views/DemoRegister.vue')
+  },
+  {
+    path: '/demo_register_pay/:token',
+    name: 'demo_register_pay',
+    component: () => import(/* webpackChunkName: "about" */ '../views/DemoRegisterPay.vue')
+  },
+  {
+    path: '/demo_register_pay_approved',
+    name: 'demo_register_pay_approved',
+    component: () => import(/* webpackChunkName: "about" */ '../views/DemoRegisterPayApproved.vue')
+  },
 ]
 
 const router = createRouter({
