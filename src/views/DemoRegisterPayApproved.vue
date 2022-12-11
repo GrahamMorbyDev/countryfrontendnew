@@ -21,9 +21,6 @@ export default {
     },
 
     methods: {
-        // Init Stripe
-        initStripe() {
-        },
     }
 };
 </script>

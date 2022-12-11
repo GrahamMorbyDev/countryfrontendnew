@@ -104,14 +104,11 @@ export default {
             axios
             .post(this.api_url + '/api/register', this.formData)
             .then((response) => {
-                var token = response.token;
-                this.$router.push({
-                    name: 'demo_register_pay', 
-                    params: {
-                        token: token
-                    }
-                });
-            })
+                console.log('response data = ', response.data);
+                var token = response.data.token;
+                this.$router.push({ path: '/demo_register_pay/' + token });
+            });
+            /*
             .catch((error) => {
                 var error_msg     = '';
                 var error_details = '';
@@ -128,6 +125,7 @@ export default {
                     });
                 }
             });
+            */
         }
     },
 };
