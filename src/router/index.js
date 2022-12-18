@@ -34,6 +34,21 @@ const routes = [
     name: 'demo_register_pay_approved',
     component: () => import(/* webpackChunkName: "about" */ '../views/DemoRegisterPayApproved.vue')
   },
+  {
+    path: '/demo_order',
+    name: 'demo_order',
+    component: () => import(/* webpackChunkName: "about" */ '../views/DemoOrder.vue')
+  },
+  {
+    path: '/demo_order_pay/:token',
+    name: 'demo_order_pay',
+    component: () => import(/* webpackChunkName: "about" */ '../views/DemoOrderPay.vue')
+  },
+  {
+    path: '/demo_order_pay_approved',
+    name: 'demo_order_pay_approved',
+    component: () => import(/* webpackChunkName: "about" */ '../views/DemoOrderPayApproved.vue')
+  },
 ]
 
 const router = createRouter({
