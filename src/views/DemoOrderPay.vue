@@ -37,6 +37,7 @@ export default {
 
     data() {
         return {
+            site_url:          process.env.VUE_APP_URL,
             api_url:           process.env.VUE_APP_API_URL,
             stripe_public_key: process.env.VUE_APP_STRIPE_PUBLISHABLE_KEY,
             stripe_pi_secret:  '',
@@ -95,7 +96,7 @@ export default {
                 //`Elements` instance that was used to create the Payment Element
                 elements: this.elements,
                 confirmParams: {
-                    return_url: 'http://countryonthecoast.local/demo_order_pay_approved',
+                    return_url: this.site_url + '/demo_order_pay_approved',
                 },
             });
 
