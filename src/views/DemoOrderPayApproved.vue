@@ -1,6 +1,8 @@
 <template>
-    <div class="py-8 flex justify-center">
-        ORDER PAYMENT STRIPE APPROVED
+    <div class="pt-2 pb-8 bg-white flex justify-center">
+        <div class="w-4/5 bg-white border-rounded border-2 border-gray-500">
+            ORDER PAYMENT STRIPE APPROVED
+        </div>
     </div>
 </template>
 

@@ -1,23 +1,29 @@
 <template>
-    <div class="py-8 flex justify-center">
+    <div class="pt-2 pb-8 bg-white flex justify-center">
+        <div class="m-4 p-6 w-1/2 bg-white border-rounded border-2 border-gray-200">
 
-        <form @submit.prevent="pay" id="payment-form">
-            <div id="payment-element">
-                <!-- Elements will create form elements here -->
-            </div>
-            <button id="submit"
-                    type="submit"
-                    class="mt-2 px-4 py-2
-                           flex justify-center
-                           border border-transparent rounded-md shadow-sm text-sm font-medium
-                           text-white bg-indigo-700
-                           hover:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >Submit</button>
+            <form @submit.prevent="pay" id="payment-form">
+                <div id="payment-element">
+                    <!-- Elements will create form elements here -->
+                </div>
+                <div id="address-element">
+                    <!-- Elements will create form elements here -->
+                </div>
+                <button id="submit"
+                        type="submit"
+                        class="mt-3 px-4 py-2
+                            flex justify-center
+                            border border-transparent rounded-md shadow-sm text-sm font-medium
+                            text-white bg-indigo-700
+                            hover:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >Submit</button>
 
-            <div id="error-message">
-                <!-- Display error message to your customers here -->
-            </div>
-        </form>
+                <div id="error-message">
+                    <!-- Display error message to your customers here -->
+                </div>
+            </form>
+
+        </div>
     </div>
 </template>
 
@@ -71,6 +77,12 @@ export default {
             // Create and mount the Payment Element
             const paymentElement = this.elements.create('payment');
             paymentElement.mount('#payment-element');
+
+            // Create and mount the Address Element in shipping mode
+            const addressElement = this.elements.create("address", {
+                mode: "shipping",
+            });
+            addressElement.mount("#address-element");
         });
 
     },
