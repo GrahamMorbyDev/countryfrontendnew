@@ -1,17 +1,17 @@
 <template>
-  <Disclosure as="nav" class="bg-red-900" v-slot="{ open }">
+  <Disclosure as="nav" class="bg-cyan-900" v-slot="{ open }">
     <div class="relative">
       <div class="absolute inset-x-0 bottom-0 h-1/2" />
       <div class="mx-auto">
         <div class="relative shadow-xl sm:overflow-hidden w-full">
           <div class="absolute inset-0">
             <img class="h-full w-full object-cover" src="@/assets/topbar.jpg" alt="Girl bound and gagged in a chair" />
-            <div class="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-500 mix-blend-multiply" />
+            <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-cyan-800 mix-blend-multiply" />
           </div>
           <div class="relative px-4">
             <div class="flex m-auto justify-center">
               <div class="flex-none">
-                <img src="@/assets/logo.png" alt="Country on the coast" class="h-32 p-5">
+                <img src="@/assets/logo.png" alt="Country on the coast" class="h-48 p-5">
               </div>
             </div>
           </div>
@@ -35,12 +35,12 @@
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
-              <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-amber-500 text-white' : 'text-gray-300 hover:bg-amber-500 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+              <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-cyan-500 text-white' : 'text-gray-300 hover:bg-cyan-500 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
             </div>
           </div>
         </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-          <button type="button" class="ml-1 rounded-full bg-amber-500 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+          <!-- <button type="button" class="ml-1 rounded-full bg-amber-500 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
             <span class="sr-only">View notifications</span>
             <BellIcon class="h-6 w-6" aria-hidden="true" />
           </button>
@@ -51,9 +51,9 @@
           <button type="button" class="ml-1 rounded-full bg-amber-500 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
             <span class="sr-only">View notifications</span>
             <BellIcon class="h-6 w-6" aria-hidden="true" />
-          </button>
+          </button> -->
 
-          <!-- Profile dropdown -->
+          <!-- Profile dropdown 
           <Menu as="div" class="relative ml-3">
             <div>
               <MenuButton class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -74,7 +74,7 @@
                 </MenuItem>
               </MenuItems>
             </transition>
-          </Menu>
+          </Menu>-->
         </div>
       </div>
     </div>
