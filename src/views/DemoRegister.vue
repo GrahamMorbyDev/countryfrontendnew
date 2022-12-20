@@ -5,7 +5,7 @@
         </div>
         <div class="py-8 w-1/2 mx-auto">
             <div class="mt-3">
-                <label for="email" class="block text-sm font-medium text-white"
+                <label for="email" class="block text-sm font-medium text-gray-700"
                     >Email</label
                 >
                 <div class="mt-1">
@@ -14,7 +14,7 @@
                         v-model="formData.email"
                         name="email"
                         id="email"
-                        class="p-2 w-full block border-gray-300 rounded-md
+                        class="p-2 w-full block border-gray-300 ring-gray-300 rounded
                                focus:ring-gray-500 focus:border-gray-500"
                         placeholder="Email"
                     />
@@ -23,7 +23,7 @@
             </div>
 
             <div class="mt-3">
-                <label for="password" class="block text-sm font-medium text-white"
+                <label for="password" class="block text-sm font-medium text-gray-700"
                     >Password</label
                 >
                 <div class="mt-1">
@@ -32,7 +32,7 @@
                         v-model="formData.password"
                         name="password"
                         id="password"
-                        class="p-2 w-full block border-gray-300 rounded-md
+                        class="p-2 w-full block border-gray-300 ring-gray-300 rounded
                                focus:ring-gray-500 focus:border-gray-500"
                         placeholder="Must be a minimum of six characters"
                     />
@@ -41,7 +41,7 @@
             </div>
 
             <div class="mt-3">
-                <label for="password" class="block text-sm font-medium text-white"
+                <label for="password" class="block text-sm font-medium text-gray-700"
                     >Confirm Password</label
                 >
                 <div class="mt-1">
@@ -50,7 +50,7 @@
                         v-model="formData.c_password"
                         name="confirmPassword"
                         id="confirmPassword"
-                        class="p-2 w-full block border-gray-300 rounded-md
+                        class="p-2 w-full block border-gray-300 ring-gray-300 rounded
                                focus:ring-gray-500 focus:border-gray-500"
                         placeholder="Must match your password"
                     />
