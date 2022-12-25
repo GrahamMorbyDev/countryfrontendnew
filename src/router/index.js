@@ -17,6 +17,16 @@ const routes = [
     name: 'history',
     component: () => import(/* webpackChunkName: "about" */ '../views/HistoryView.vue')
   },
+  {
+    path: '/artists',
+    name: 'artisits',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ArtistsView.vue')
+  },
+  {
+    path: '/artist',
+    name: 'artisit',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ArtistView.vue')
+  },
 
 
   {
