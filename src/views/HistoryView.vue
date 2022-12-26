@@ -10,34 +10,38 @@
       <div class="relative px-4 pt-12 pb-16 sm:px-6 sm:pt-16 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8">
         <div class="lg:col-start-2 lg:pl-8">
           <div class="mx-auto max-w-prose text-base lg:ml-auto lg:mr-0 lg:max-w-lg">
-            <h2 class="font-semibold leading-6 text-white">Work with us</h2>
-            <h3 class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">Our Process</h3>
-            <p class="mt-8 text-lg text-gray-500">Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.</p>
-            <div class="prose prose-indigo mt-5 text-gray-500">
-              <p>Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.</p>
-              <p>Bibendum eu nulla feugiat justo, elit adipiscing. Ut tristique sit nisi lorem pulvinar. Urna, laoreet fusce nibh leo. Dictum et et et sit. Faucibus sed non gravida lectus dignissim imperdiet a.</p>
-              <p>Dictum magnis risus phasellus vitae quam morbi. Quis lorem lorem arcu, metus, egestas netus cursus. In.</p>
-              <ul role="list">
-                <li>Quis elit egestas venenatis mattis dignissim.</li>
-                <li>Cras cras lobortis vitae vivamus ultricies facilisis tempus.</li>
-                <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-              </ul>
-              <p>Rhoncus nisl, libero egestas diam fermentum dui. At quis tincidunt vel ultricies. Vulputate aliquet velit faucibus semper. Pellentesque in venenatis vestibulum consectetur nibh id. In id ut tempus egestas. Enim sit aliquam nec, a. Morbi enim fermentum lacus in. Viverra.</p>
-              <h3>How we’re different</h3>
-              <p>Tincidunt integer commodo, cursus etiam aliquam neque, et. Consectetur pretium in volutpat, diam. Montes, magna cursus nulla feugiat dignissim id lobortis amet. Laoreet sem est phasellus eu proin massa, lectus. Diam rutrum posuere donec ultricies non morbi. Mi a platea auctor mi.</p>
-              <p>Mauris ullamcorper imperdiet nec egestas mi quis quam ante vulputate. Vel faucibus adipiscing lacus, eget. Nunc fermentum id tellus donec. Ut metus odio sit sit varius non nunc orci. Eu, mi neque, ornare suspendisse amet, nibh. Facilisi volutpat lectus id sapien dis mauris rhoncus. Est rhoncus, interdum imperdiet ac eros, diam mauris, tortor. Risus id sit molestie magna.</p>
-            </div>
+          <h3 class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">History</h3>
+            <p class="mt-8 text-lg text-gray-500">
+              Country on the Coast was founded in 2018 by Hannah Roper, also known as Lily Garland, with the view to bringing 
+              country music artists and south coast fans closer together.
+              With most country music festivals being far from Portsmouth,
+              Hannah worked with a local venue, The Gaiety, to bring her vision to life with a twist!
+            </p>
+            <p class="mt-8 text-lg text-gray-500">I mean how often do you get country music on a pier?! </p>
+            <p class="mt-8 text-lg text-gray-500">2019 was our first live festival.  The line up consisted of</p>
+            <img src="@/assets/history/2019Poster.jpg" alt="2019 Country on the coast line up" class="mt-2">
+            <p class="mt-8 text-lg text-gray-500">Following postponement after postponement due to the global Pandemic we finally came back with a bang in April 2022!
+              We had a little rebrand and had a fantastic line up plus we went all out on the decor this year! Really bringing the
+              country to the pier!</p>
+            <p class="mt-8 text-lg text-gray-500">The line up was as follows;</p>
+            <img src="@/assets/history/2022Poster.jpg" alt="2019 Country on the coast line up" class="mt-2">
           </div>
         </div>
       </div>
     </div>
+    <photos-grid-vue></photos-grid-vue>
+    <footer-bottom-vue></footer-bottom-vue>
   </div>
 </template>
 <script>
 import Navbar from '../components/navBar';
+import photosGridVue from '@/components/photosGrid.vue';
+import footerBottomVue from '@/components/footerBottom.vue';
 export default {
   components: {
     Navbar,
+    photosGridVue,
+    footerBottomVue
   },
   data() {
     return {

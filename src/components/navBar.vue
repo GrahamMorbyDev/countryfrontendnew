@@ -35,7 +35,9 @@
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
-              <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-cyan-500 text-white' : 'text-gray-300 hover:bg-cyan-500 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+              <router-link v-for="item in navigation" :key="item.name" :to="item.href"
+              :class="[item.current ? 'bg-cyan-500 text-white' : 'text-gray-300 hover:bg-cyan-500 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" 
+              :aria-current="item.current ? 'page' : undefined">{{ item.name }}</router-link>
             </div>
           </div>
         </div>
@@ -95,7 +97,7 @@ const navigation = [
   { name: 'Home', href: '/', current: true },
   { name: 'About', href: '/about', current: false },
   { name: 'History', href: '/history', current: false },
-  { name: 'Artists', href: '#', current: false },
+  { name: 'Artists', href: '/artists', current: false },
   { name: 'Tickets', href: '#', current: false },
   { name: 'Store', href: '#', current: false },
   { name: 'Contact us', href: '#', current: false },
