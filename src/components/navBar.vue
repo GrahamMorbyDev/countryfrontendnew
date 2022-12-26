@@ -1,23 +1,23 @@
 <template>
-  <Disclosure as="nav" class="bg-cyan-900" v-slot="{ open }">
-    <div class="relative">
-      <div class="absolute inset-x-0 bottom-0 h-1/2" />
-      <div class="mx-auto">
-        <div class="relative shadow-xl sm:overflow-hidden w-full">
-          <div class="absolute inset-0">
-            <img class="h-full w-full object-cover" src="@/assets/topbar.jpg" alt="Girl bound and gagged in a chair" />
-            <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-cyan-800 mix-blend-multiply" />
-          </div>
-          <div class="relative px-4">
-            <div class="flex m-auto justify-center">
-              <div class="flex-none">
-                <img src="@/assets/logo.png" alt="Country on the coast" class="h-48 p-5">
-              </div>
+    <Disclosure as="nav" class="bg-cyan-900" v-slot="{ open }">
+        <div class="relative">
+            <div class="absolute inset-x-0 bottom-0 h-1/2" />
+            <div class="mx-auto">
+                <div class="relative shadow-xl sm:overflow-hidden w-full">
+                    <div class="absolute inset-0">
+                        <img class="h-full w-full object-cover" src="@/assets/topbar.jpg" alt="" />
+                        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-cyan-800 mix-blend-multiply" />
+                    </div>
+                <div class="relative px-4">
+                    <div class="flex m-auto justify-center">
+                        <div class="flex-none">
+                            <img src="@/assets/logo.png" alt="Country on the coast" class="h-48 p-5">
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
 
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
@@ -39,54 +39,14 @@
               :class="[item.current ? 'bg-cyan-500 text-white' : 'text-gray-300 hover:bg-cyan-500 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" 
               :aria-current="item.current ? 'page' : undefined">{{ item.name }}</router-link>
             </div>
-          </div>
         </div>
-        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-          <!-- <button type="button" class="ml-1 rounded-full bg-amber-500 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-            <span class="sr-only">View notifications</span>
-            <BellIcon class="h-6 w-6" aria-hidden="true" />
-          </button>
-          <button type="button" class="ml-1 rounded-full bg-amber-500 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-            <span class="sr-only">View notifications</span>
-            <BellIcon class="h-6 w-6" aria-hidden="true" />
-          </button>
-          <button type="button" class="ml-1 rounded-full bg-amber-500 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-            <span class="sr-only">View notifications</span>
-            <BellIcon class="h-6 w-6" aria-hidden="true" />
-          </button> -->
 
-          <!-- Profile dropdown 
-          <Menu as="div" class="relative ml-3">
-            <div>
-              <MenuButton class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                <span class="sr-only">Open user menu</span>
-                <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-              </MenuButton>
+        <DisclosurePanel class="sm:hidden">
+            <div class="space-y-1 px-2 pt-2 pb-3">
+                <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
             </div>
-            <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
-              <MenuItems class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                <MenuItem v-slot="{ active }">
-                  <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Your Profile</a>
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Settings</a>
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <a href="#" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">Sign out</a>
-                </MenuItem>
-              </MenuItems>
-            </transition>
-          </Menu>-->
-        </div>
-      </div>
-    </div>
-
-    <DisclosurePanel class="sm:hidden">
-      <div class="space-y-1 px-2 pt-2 pb-3">
-        <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
-      </div>
-    </DisclosurePanel>
-  </Disclosure>
+        </DisclosurePanel>
+    </Disclosure>
 </template>
 
 <script setup>

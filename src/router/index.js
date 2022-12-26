@@ -1,6 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+/* 
+    Route Guards
+*/
+function guardMyAdminRoute(to, from, next) {
+    let hasToken             = JSON.parse(localStorage.getItem('token'))
+    let isAdminAuthenticated = false;
 
+    if (localStorage.getItem('isAdmin') == true  &&  hasToken)
+        isAdminAuthenticated = true;
+    else
+        isAdminAuthenticated = false;
+
+    if (isAdminAuthenticated) {
+        next();
+    } else {
+        next('/admin/login'); // go to '/login';
+    }
+}
+
+
+/*
+    Routes
+*/
 const routes = [
   {
     path: '/',
@@ -26,6 +48,29 @@ const routes = [
     path: '/artist',
     name: 'artisit',
     component: () => import(/* webpackChunkName: "about" */ '../views/ArtistView.vue')
+  },
+
+
+  {
+    path: '/admin', 
+    redirect: { name: 'adminHome' }, 
+    beforeEnter: guardMyAdminRoute
+  },
+  {
+    path: '/admin/login',
+    name: 'adminLogin',
+    component: () => import(/* webpackChunkName: "about" */ '../admin/adminLogin.vue')
+  },
+  {
+    path: '/admin/logout',
+    name: 'adminLogout',
+    component: () => import(/* webpackChunkName: "about" */ '../admin/adminLogout.vue')
+  },
+  {
+    path: '/admin/home',
+    name: 'adminHome',
+    component: () => import(/* webpackChunkName: "about" */ '../admin/adminHome.vue'),
+    beforeEnter: guardMyAdminRoute
   },
 
 
