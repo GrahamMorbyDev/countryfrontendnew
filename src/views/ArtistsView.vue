@@ -11,7 +11,9 @@
         <ul role="list" class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
           <li v-for="person in people" :key="person.name" class="rounded-lg bg-cyan-900 py-10 px-6 text-center xl:px-10 xl:text-left">
             <div class="space-y-6 xl:space-y-10">
+              <RouterLink :to="'/artist'">
               <img class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56" :src="person.imageUrl" alt="" />
+              </RouterLink>
               <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
                 <div class="space-y-1 text-lg font-medium leading-6">
                   <h3 class="text-white">{{ person.name }}</h3>
