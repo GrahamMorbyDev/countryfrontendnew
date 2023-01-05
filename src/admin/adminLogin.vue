@@ -12,17 +12,16 @@
                     <div class="space-y-6">
                         <!-- Birth Day -->
                         <div>
-                            <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                             <div class="mt-1">
                                 <input type="text"
-                                       v-model="formData.username"  name="username"  id="username"
-                                       class="shadow-sm
+                                       v-model="formData.email"  name="email"  id="email"
+                                       class="p-2 shadow-sm block w-full border-gray-300 rounded-md
                                               focus:ring-indigo-500 focus:border-indigo-500
-                                    block w-full border-gray-300 rounded-md
-                                    sm:text-sm"
+                                              sm:text-sm"
                                     placeholder="you@example.com"
                                 />
-                                <span class="font-small text-indigo-800">{{ errors['username'] }}</span>
+                                <span class="font-small text-indigo-800">{{ errors['email'] }}</span>
                             </div>
                         </div>
 
@@ -32,7 +31,7 @@
                             <div class="mt-1">
                                 <input type="password"
                                        v-model="formData.password"  name="password"  id="password"
-                                       class="shadow-sm block w-full border-gray-300 rounded-md
+                                       class="p-2 shadow-sm block w-full border-gray-300 rounded-md
                                               focus:ring-indigo-500 focus:border-indigo-500
                                               sm:text-sm"
                                 />
@@ -80,7 +79,7 @@ export default {
         return {
             api_url:  process.env.VUE_APP_API_URL,
             formData: {
-                username: '',
+                email:    '',
                 password: ''
             },
             store:    useStore(),

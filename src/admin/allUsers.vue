@@ -1,10 +1,25 @@
 <template>
     <admin-layout>
-        <div class="md:flex md:items-center md:justify-between p-5 bg-white rounded-t-lg">
-            <div class="flex-1 min-w-0">
+        <div class="flex items-center justify-between mb-2 bg-white rounded-t-lg">
+            <div class="min-w-0 mr-3">
                 <h2 class="text-2xl leading-7 text-blue-600 sm:text-3xl sm:truncate">All Users</h2>
             </div>
-            <div class="mt-4 flex md:mt-0 md:ml-4">
+            <div class="flex-1">
+                <form class="w-full flex ml-0" action="#" method="GET">
+                    <label for="search-field" class="sr-only">Search</label>
+                    <div class="relative w-full text-gray-400 focus-within:text-gray-600">
+                        <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none">
+                            <SearchIcon class="h-5 w-5" aria-hidden="true" />
+                        </div>
+                        <input id="search-field" type="search" name="search"
+                            class="block w-full h-full pl-8 pr-3 py-2 text-gray-900 placeholder-gray-400 
+                                   rounded-md border-gray-300 border-2 shadow-sm
+                                   focus:border-indigo-500 focus:outline-none sm:text-sm" 
+                            placeholder="Search" />
+                    </div>
+                </form>
+            </div>
+            <div class="mt-4 flex mt-0 ml-4">
                 <button type="button" 
                         class="inline-flex items-center px-4 py-2 
                                border border-transparent rounded-md shadow-sm text-sm font-medium text-white 
@@ -29,42 +44,41 @@
             </div>
         </div>
 
-       <div class="px-4 sm:px-6 lg:px-8">
-    <div class="mt-8 flex flex-col">
-      <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-          <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-            <table class="min-w-full divide-y divide-gray-300">
-              <thead class="bg-gray-50">
-                <tr>
-                  <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
-                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Email</th>
-                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">ID</th>
-                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Joined</th>
-                  <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                    <span class="sr-only">Edit</span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-200 bg-white">
-                <tr v-for="user in users" :key="user.email">
-                  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ user.name }}</td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ user.email }}</td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ user.id }}</td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ user.joined_at }}</td>
-                  <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                    <router-link :to="'/admin/users/' + user.id + '/edit'" class="text-indigo-600 hover:text-indigo-900"
-                      >Edit</router-link
-                    >
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="px-4 sm:px-6 lg:px-8">
+            <div class="mt-2 flex flex-col">
+                <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-300">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col" class="py-1 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
+                                        <th scope="col" class="px-3 py-1 text-left text-sm font-semibold text-gray-900">Email</th>
+                                        <th scope="col" class="px-3 py-1 text-left text-sm font-semibold text-gray-900">Joined</th>
+                                        <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
+                                            <span class="sr-only">Edit</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 bg-white">
+                                    <tr v-for="user in users" :key="user.email">
+                                        <td class="whitespace-nowrap      py-1 pl-4 pr-3"><img :src="user.avatar_url"  class="h-8" /></td>
+                                        <td class="whitespace-nowrap      py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ user.name }}</td>
+                                        <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">{{ user.email }}</td>
+                                        <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">{{ user.membership_started_at }}</td>
+                                        <td class="relative whitespace-nowrap py-1 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                            <router-link :to="'/admin/users/' + user.id + '/edit'" class="text-indigo-600 hover:text-indigo-900"
+                                            >Edit</router-link>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
     </admin-layout>
 </template>
 

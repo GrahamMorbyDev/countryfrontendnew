@@ -27,27 +27,27 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/HomeView.vue')
+    component: () => import('../views/HomeView.vue')
   },
   {
     path: '/about',
     name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import('../views/AboutView.vue')
   },
   {
     path: '/history',
     name: 'history',
-    component: () => import(/* webpackChunkName: "about" */ '../views/HistoryView.vue')
+    component: () => import('../views/HistoryView.vue')
   },
   {
     path: '/artists',
     name: 'artisits',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ArtistsView.vue')
+    component: () => import('../views/ArtistsView.vue')
   },
   {
     path: '/artist',
     name: 'artisit',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ArtistView.vue')
+    component: () => import('../views/ArtistView.vue')
   },
 
 
@@ -59,50 +59,76 @@ const routes = [
   {
     path: '/admin/login',
     name: 'adminLogin',
-    component: () => import(/* webpackChunkName: "about" */ '../admin/adminLogin.vue')
+    component: () => import('../admin/adminLogin.vue')
   },
   {
     path: '/admin/logout',
     name: 'adminLogout',
-    component: () => import(/* webpackChunkName: "about" */ '../admin/adminLogout.vue')
+    component: () => import('../admin/adminLogout.vue')
   },
   {
     path: '/admin/home',
     name: 'adminHome',
-    component: () => import(/* webpackChunkName: "about" */ '../admin/adminHome.vue'),
+    component: () => import('../admin/adminHome.vue'),
     beforeEnter: guardMyAdminRoute
   },
+
+  {
+    path: '/admin/users',
+    name: 'adminUsers',
+    component: () => import('../admin/allUsers.vue'),
+    beforeEnter: guardMyAdminRoute
+  },
+  {
+    path: '/admin/users/:id/create',
+    name: 'createUser',
+    meta: {
+        mode: 'Create'
+    },
+    component: () => import('../admin/editUser.vue'),
+    beforeEnter: guardMyAdminRoute
+  },
+  {
+    path: '/admin/users/:id/edit',
+    name: 'editUser',
+    meta: {
+        mode: 'Edit'
+    },
+    component: () => import('../admin/editUser.vue'),
+    beforeEnter: guardMyAdminRoute
+  },
+
 
 
   {
     path: '/demo_register',
     name: 'demo_register',
-    component: () => import(/* webpackChunkName: "about" */ '../views/DemoRegister.vue')
+    component: () => import('../views/DemoRegister.vue')
   },
   {
     path: '/demo_register_pay/:token',
     name: 'demo_register_pay',
-    component: () => import(/* webpackChunkName: "about" */ '../views/DemoRegisterPay.vue')
+    component: () => import('../views/DemoRegisterPay.vue')
   },
   {
     path: '/demo_register_pay_approved',
     name: 'demo_register_pay_approved',
-    component: () => import(/* webpackChunkName: "about" */ '../views/DemoRegisterPayApproved.vue')
+    component: () => import('../views/DemoRegisterPayApproved.vue')
   },
   {
     path: '/demo_order',
     name: 'demo_order',
-    component: () => import(/* webpackChunkName: "about" */ '../views/DemoOrder.vue')
+    component: () => import('../views/DemoOrder.vue')
   },
   {
     path: '/demo_order_pay/:token',
     name: 'demo_order_pay',
-    component: () => import(/* webpackChunkName: "about" */ '../views/DemoOrderPay.vue')
+    component: () => import('../views/DemoOrderPay.vue')
   },
   {
     path: '/demo_order_pay_approved',
     name: 'demo_order_pay_approved',
-    component: () => import(/* webpackChunkName: "about" */ '../views/DemoOrderPayApproved.vue')
+    component: () => import('../views/DemoOrderPayApproved.vue')
   },
 ]
 
