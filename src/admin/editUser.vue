@@ -413,7 +413,7 @@ export default {
             // Go through dropped files and handle pre-upload-checks
             for (let i = 0; i < files.length; i++) {
                 let file = files.item(i);
-                let max_size     = 0;
+
                 // Check selected file-types
                 if (file.type.substr(0, 5) == 'image') {
                     if (file.size > this.max_size_allowed) {
@@ -429,7 +429,6 @@ export default {
                 // Add to list
                 if (item == 'avatar') {
                     this.avatar_file = file;
-                    document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])
                 }
                 else {
                     this.background_file = file;

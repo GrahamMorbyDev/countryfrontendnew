@@ -98,6 +98,30 @@ const routes = [
     beforeEnter: guardMyAdminRoute
   },
 
+  {
+    path: '/admin/posts',
+    name: 'adminPosts',
+    component: () => import('../admin/allPosts.vue'),
+    beforeEnter: guardMyAdminRoute
+  },
+  {
+    path: '/admin/posts/:id/create',
+    name: 'createPost',
+    meta: {
+        mode: 'Create'
+    },
+    component: () => import('../admin/editPost.vue'),
+    beforeEnter: guardMyAdminRoute
+  },
+  {
+    path: '/admin/posts/:id/edit',
+    name: 'editPost',
+    meta: {
+        mode: 'Edit'
+    },
+    component: () => import('../admin/editPost.vue'),
+    beforeEnter: guardMyAdminRoute
+  },
 
 
   {
