@@ -11,40 +11,33 @@
                         <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none">
                             <SearchIcon class="h-5 w-5" aria-hidden="true" />
                         </div>
-                        <input id="search-field" type="search" name="search"
-                            class="block w-full h-full pl-8 pr-3 py-2 text-gray-900 placeholder-gray-400 
+                        <input id="search-field" type="search" v-model="search"
+                            class="block w-full h-full p-2 text-gray-900 placeholder-gray-400 
                                    rounded-md border-gray-300 border-2 shadow-sm
                                    focus:border-indigo-500 focus:outline-none sm:text-sm" 
-                            placeholder="Search" />
+                            placeholder="Enter search text (over 2 characters)" />
                     </div>
                 </form>
             </div>
-            <div class="mt-4 flex mt-0 ml-4">
-                <button type="button" 
-                        class="inline-flex items-center px-4 py-2 
-                               border border-transparent rounded-md shadow-sm text-sm font-medium text-white 
-                               bg-green-400 hover:bg-green-600" 
-                        @click="addBlog">Add Post</button>
-                <p class="mt-2 pr-2 text-indigo-600 font-bold">Page {{ page }} of {{ page_count }}</p>
-                <button type="button" 
-                        :disabled="isFirstPage == true"
-                        class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 
-                               disabled:bg-red-200
-                               hover:bg-gray-700 
-                               focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500" 
-                        @click="getLastPage">Previous</button>
-                <button type="button" 
-                        :disabled="isLastPage == true"
-                        class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 
-                               disabled:bg-red-200
-                               hover:bg-indigo-600 
-                               focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500" 
-                        @click="getNextPage">Next</button>
-            </div>
+            <button type="button" 
+                    :disabled="okToSearch != true"
+                    class="ml-2 inline-flex items-center px-4 py-2 
+                           shadow-sm text-sm font-medium text-white
+                           rounded-md border border-transparent  bg-indigo-600 
+                           disabled:bg-gray-200
+                           hover:bg-indigo-700"
+                    @click="getAllUsers"
+            >Search</button>
+            <button type="button" 
+                    class="ml-4 inline-flex items-center px-4 py-2 
+                           border border-transparent rounded-md shadow-sm text-sm font-medium text-white 
+                           bg-green-400 hover:bg-green-500" 
+                    @click="addPost()">Add Post</button>
+
         </div>
 
-        <div class="px-4 sm:px-6 lg:px-8">
-            <div class="mt-2 flex flex-col">
+        <div class="">
+            <div class="mt-3 flex flex-col">
                 <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                         <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
@@ -52,9 +45,9 @@
                                 <thead class="bg-gray-50">
                                     <tr>
                                         <th scope="col"></th>
-                                        <th scope="col" class="py-1 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Title</th>
-                                        <th scope="col" class="px-3 py-1 text-left text-sm font-semibold text-gray-900">Author</th>
-                                        <th scope="col" class="px-3 py-1 text-left text-sm font-semibold text-gray-900">Date</th>
+                                        <th scope="col" class="     py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Title</th>
+                                        <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900">Author</th>
+                                        <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900">Date</th>
                                         <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
                                             <span class="sr-only">Edit</span>
                                         </th>
@@ -62,10 +55,10 @@
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white">
                                     <tr v-for="post in posts" :key="post.id">
-                                        <td class="whitespace-nowrap      py-1 pl-4 pr-3"><img :src="post.image_url"  class="h-8" /></td>
-                                        <td class="whitespace-nowrap      py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ post.title }}</td>
-                                        <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">{{ post.author }}</td>
-                                        <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">{{ post.created_at }}</td>
+                                        <td class="whitespace-nowrap      py-2 pl-4 pr-3"><img :src="post.image_url"  class="h-8" /></td>
+                                        <td class="whitespace-nowrap      py-2 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ post.title }}</td>
+                                        <td class="whitespace-nowrap px-3 py-2 text-sm text-gray-500">{{ post.author }}</td>
+                                        <td class="whitespace-nowrap px-3 py-2 text-sm text-gray-500">{{ post.created_at }}</td>
                                         <td class="relative whitespace-nowrap py-1 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                             <router-link :to="'/admin/posts/' + post.id + '/edit'" class="text-indigo-600 hover:text-indigo-900"
                                             >Edit</router-link>
@@ -76,6 +69,26 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="mt-3 w-full flex items-center justify-end mb-2 bg-white rounded-t-lg">
+                <p class="mt-2 text-indigo-600 font-bold">Page {{ page }} of {{ page_count }}</p>
+                <button type="button" 
+                        :disabled="isFirstPage == true"
+                        class="ml-2 inline-flex items-center px-4 py-2 
+                               shadow-sm text-sm font-medium text-white
+                               rounded-md border border-transparent  bg-indigo-600 
+                               disabled:bg-gray-200
+                               hover:bg-indigo-700"
+                        @click="getLastPage">Previous</button>
+                <button type="button" 
+                        :disabled="isLastPage == true"
+                        class="ml-2 inline-flex items-center px-4 py-2 
+                               shadow-sm text-sm font-medium text-white
+                               rounded-md border border-transparent  bg-indigo-600 
+                               disabled:bg-gray-200
+                               hover:bg-indigo-700"
+                        @click="getNextPage">Next</button>
             </div>
         </div>
     </admin-layout>
@@ -120,6 +133,7 @@ export default {
 
     methods: {
         addPost() {
+            this.$router.push({name: 'createPost'});
         },
 
         async getAllPosts() {

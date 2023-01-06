@@ -49,7 +49,7 @@ export default {
                 { name: 'Home',      href: '/admin/home',    icon: HomeIcon,  current: true },
                 { name: 'Users',     href: '/admin/users',   icon: HomeIcon,  current: false },
                 { name: 'Order',     href: '/admin/orders',  icon: HomeIcon,  current: false },
-                { name: 'Blog',      href: '/admin/blog',    icon: HomeIcon,  current: false },
+                { name: 'Blog',      href: '/admin/posts',   icon: HomeIcon,  current: false },
             ],
             userNavigation: [
                 //{ name: 'Your Profile', href: '#' },

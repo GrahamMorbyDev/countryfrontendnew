@@ -263,7 +263,7 @@
                             <Datepicker v-model="user.membership_started_at" 
                                         :enableTimePicker="true"  :clearable="false" 
                                         :format="'yyyy-MM-dd HH:mm:ss'"
-                                        />
+                            />
                             <div class="w-full p-2">
                                 <span class="font-small text-red-500">{{ errors['membership_started_at'] }}</span>
                             </div>
@@ -338,7 +338,21 @@ export default {
         this.mode  = this.$route.meta.mode;
         this.token = getStorage('token');
 
-        this.getUser(this.$route.params.id);
+        if (this.mode == 'Edit') {
+            this.getUser(this.$route.params.id);
+        }
+        else {
+            this.user = {
+                'is_admin':              false,
+                'name':                  '',
+                'email':                 '',
+                'email_verified_at':     null,
+                'is_creator':            false,
+                'membership_started_at': null,
+                'avatar_url':            this.api_url + '/api/files/1/image',
+                'background_url':        this.api_url + '/api/files/2/image',
+            };
+        }
     },
     
     computed: {
@@ -397,10 +411,10 @@ export default {
         },
     
         handleBackgroundFileDrop(event) {
-            return this.handleFileDrop(event.dataTransfer.background_file, 'background');
+            return this.handleFileDrop(event.dataTransfer.files, 'background');
         },
         handleAvatarFileDrop(event) {
-            return this.handleFileDrop(event.dataTransfer.avatar_file, 'avatar');
+            return this.handleFileDrop(event.dataTransfer.files, 'avatar');
         },
         handleFileDrop(files, item) {
             this.errors[item] = '';
@@ -483,9 +497,15 @@ export default {
             }
 
 
-            axios.post(this.api_url + '/api/admin/users/' + this.user.id +'/update', 
-                       formData, 
-                       { headers: headers })
+            let url = '';
+            if (this.mode == 'Edit') {
+                url = this.api_url + '/api/admin/users/' + this.user.id +'/update';
+            }
+            else {
+                url = this.api_url + '/api/admin/users/create';
+            }
+
+            axios.post(url, formData, { headers: headers })
             .then((response) => {
                 this.alert('User updated successfully', 'Success', 'success');
                 this.$router.push({name: 'adminUsers'})

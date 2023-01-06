@@ -106,11 +106,10 @@
                     </label>
                 </div>
                 <div class="w-2/3">
-                    <input v-model="user.body" type="text" name="body" id="body"
-                        class="p-2 w-full min-w-0
-                                rounded-md shadow-sm border-gray-100 border-2
-                                focus:ring-indigo-500 focus:border-indigo-500
-                                sm:text-sm" />
+                    <div class="p-0 m-0 w-full min-w-0
+                                shadow-sm sm:text-sm">
+                        <ckeditor :editor="editor" v-model="post.body" :config="editorConfig"></ckeditor>
+                    </div>
                     <div class="w-full p-2">
                         <span class="font-small text-red-500">{{ errors['body'] }}</span>
                     </div>
@@ -118,7 +117,8 @@
             </div>
 
             <!-- CREATED AT -->
-            <div class="flex">
+            <div v-if="mode == 'Edit'"
+                 class="flex">
                 <div class="w-1/3">
                     <label for="type"  
                         class="p-2 block text-right text-base text-gray-700 mr-2">
@@ -173,6 +173,8 @@ import AdminLayout     from "@/layouts/adminLayout.vue";
 import axios           from "axios";
 import Datepicker      from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
+import ClassicEditor   from '@ckeditor/ckeditor5-build-classic';
+
 
 export default {
     components: {
@@ -186,6 +188,27 @@ export default {
             token:        null,
 
             mode:                 '',
+            editor:       ClassicEditor,
+            editorData:   '<p>Content of the editor.</p>',
+            editorConfig: {
+                toolbar: [ 
+                    'heading', '|', 
+                    'bold', 'italic', 'link', '|',
+                    'bulletedList', 'numberedList', 'decreaseIndent', 'increaseIndent', '|',
+                    'blockQuote', 'insertTable', 'undo', 'redo'
+                ],
+                heading: {
+                    options: [
+                        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+                    ]
+                },
+                alignment: {
+                    options: [ 'left', 'right', 'center' ]
+                },
+                language: 'en'
+            },
 
             imageDropZoneActive:  false,
             image_file:           null,
@@ -201,7 +224,17 @@ export default {
         this.mode  = this.$route.meta.mode;
         this.token = getStorage('token');
 
-        this.getPost(this.$route.params.id);
+        if (this.mode == 'Edit') {
+            this.getPost(this.$route.params.id);
+        }
+        else {
+            this.post = {
+                'is_draft':  false,
+                'title':     '',
+                'body':      '',
+                'image_url': null
+            };
+        }
     },
     
     computed: {
@@ -245,7 +278,7 @@ export default {
         },
     
         handleImageFileDrop(event) {
-            return this.handleFileDrop(event.dataTransfer.image_file, 'image');
+            return this.handleFileDrop(event.dataTransfer.files, 'image');
         },
         handleFileDrop(files, item) {
             this.errors[item] = '';
@@ -296,7 +329,7 @@ export default {
             })
             .catch(error => {
                 console.log('Blog post not retrieved', error);
-                this.$router.push({name: 'adminUsers'})
+                this.$router.push({name: 'adminPosts'})
             });
         },
 
@@ -313,11 +346,12 @@ export default {
 
             let formData = new FormData();
 
-            formData.append("title", this.post.title);
-            formData.append("body",  this.post.body);
+            formData.append("is_draft", this.post.is_draft);
+            formData.append("title",    this.post.title);
+            formData.append("body",     this.post.body);
 
             if (this.image_file != null) {
-                formData.append("image", this.image_file);
+                formData.append("image_file", this.image_file);
             }
 
             let url = '';

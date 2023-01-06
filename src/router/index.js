@@ -80,8 +80,8 @@ const routes = [
     beforeEnter: guardMyAdminRoute
   },
   {
-    path: '/admin/users/:id/create',
-    name: 'createUser',
+    path: '/admin/users/create',
+    name: 'adminCreateUser',
     meta: {
         mode: 'Create'
     },
@@ -90,7 +90,7 @@ const routes = [
   },
   {
     path: '/admin/users/:id/edit',
-    name: 'editUser',
+    name: 'adminEditUser',
     meta: {
         mode: 'Edit'
     },
@@ -105,7 +105,7 @@ const routes = [
     beforeEnter: guardMyAdminRoute
   },
   {
-    path: '/admin/posts/:id/create',
+    path: '/admin/posts/create',
     name: 'createPost',
     meta: {
         mode: 'Create'
