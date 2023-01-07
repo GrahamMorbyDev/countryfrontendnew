@@ -20,7 +20,7 @@
     </div>
 
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-      <div class="relative flex h-8 items-center justify-between">
+      <div class="relative flex h-8at  items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
           <DisclosureButton
@@ -37,9 +37,9 @@
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <router-link v-for="item in navigation" :key="item.name" :to="item.href"
+            <a v-for="item in navigation" :key="item.name" :href="item.href"
               :class="[item.current ? 'bg-cyan-500 text-white' : 'text-gray-300 hover:bg-cyan-500 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']"
-              :aria-current="item.current ? 'page' : undefined">{{ item.name }}</router-link>
+              :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
           </div>
         </div>
       </div>
@@ -64,8 +64,8 @@ const navigation = [
   { name: 'About', href: '/about', current: false },
   { name: 'History', href: '/history', current: false },
   { name: 'Artists', href: '/artists', current: false },
-  { name: 'Tickets', href: '#', current: false },
+  { name: 'Tickets', href: 'https://book.events/gaietybarsouthsea/2023-04-21/41956', current: false },
   { name: 'Store', href: '#', current: false },
-  { name: 'Contact us', href: '#', current: false },
+  { name: 'Contact us', href: '/contact-us', current: false },
 ]
 </script>

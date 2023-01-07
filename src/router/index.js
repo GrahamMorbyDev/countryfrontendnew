@@ -41,13 +41,18 @@ const routes = [
   },
   {
     path: '/artists',
-    name: 'artisits',
+    name: 'artists',
     component: () => import('../views/ArtistsView.vue')
   },
   {
     path: '/artist',
     name: 'artisit',
     component: () => import('../views/ArtistView.vue')
+  },
+  {
+    path: '/contact-us',
+    name: 'contact',
+    component: () => import('../views/ContactUsView.vue')
   },
 
 
