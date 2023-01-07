@@ -5,8 +5,7 @@
       </div>
       <div class="relative mx-auto max-w-7xl">
         <div class="text-center">
-          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From the blog</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.</p>
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Latest News</h2>
         </div>
         <div class="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
           <div v-for="post in posts" :key="post.title" class="flex flex-col overflow-hidden rounded-lg shadow-lg">

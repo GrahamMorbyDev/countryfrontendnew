@@ -64,6 +64,7 @@ const navigation = [
   { name: 'About', href: '/about', current: false },
   { name: 'History', href: '/history', current: false },
   { name: 'Artists', href: '/artists', current: false },
+  { name: 'News', href: '/latest-news', current: false },
   { name: 'Tickets', href: 'https://book.events/gaietybarsouthsea/2023-04-21/41956', current: false },
   { name: 'Store', href: '#', current: false },
   { name: 'Contact us', href: '/contact-us', current: false },

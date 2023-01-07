@@ -54,7 +54,16 @@ const routes = [
     name: 'contact',
     component: () => import('../views/ContactUsView.vue')
   },
-
+  {
+    path: '/news-page',
+    name: 'blog',
+    component: () => import('../views/BlogMainView.vue')
+  },
+  {
+    path: '/latest-news',
+    name: 'blog',
+    component: () => import('../views/BlogsMainPage.vue')
+  },
 
   {
     path: '/admin', 
