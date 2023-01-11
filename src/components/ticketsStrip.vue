@@ -12,7 +12,7 @@
                 <a href="#"
                     class="flex items-center justify-center rounded-md border border-transparent bg-cyan-700 bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">Line
                     up</a>
-                <a href="#"
+                <a href="https://book.events/gaietybarsouthsea/2023-04-21/41956"
                     class="flex items-center justify-center rounded-md border border-transparent bg-indigo-50 px-4 py-3 text-base font-medium text-cyan-800 shadow-sm hover:bg-indigo-100">Tickets</a>
             </div>
         </div>

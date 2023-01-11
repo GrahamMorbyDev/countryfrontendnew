@@ -18,11 +18,11 @@
             conjunction with The Gaiety Southsea in 2018.</p>
           <p class="prose prose-indigo mt-5">April 2019 saw the debut of the festival drawing in artists from across the
             UK and internationally and attendees from all over the UK</p>
-          <p class="prose prose-indigo mt-5">As with all live music and events, Country on the Coast was hit by the
+          <p class="prose prose-indigo mt-5 mb-5">As with all live music and events, Country on the Coast was hit by the
             global pandemic of 2020 but after 2 years of postponements and countless hours of effort
             , Country on the Coast 2022 went ahead and was a roaring success!</p>
-          <button
-            class="bg-cyan-900 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded mt-12 w-full block">Tickets</button>
+          <a href="https://book.events/gaietybarsouthsea/2023-04-21/41956"
+            class="bg-cyan-900 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded">Tickets</a>
         </div>
       </div>
     </div>
@@ -44,9 +44,9 @@
         southern area other than small one off gigs, so what does someone with a solution based focus do…..they create
         their own opportunities!</p> 
 
-        <p class="prose prose-indigo mt-5 text-center">From that thought, Country on the Coast was born!</p>
+        <p class="prose prose-indigo mt-5 text-center mb-5">From that thought, Country on the Coast was born!</p>
 
-        <button class="bg-cyan-900 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded mt-12 text-center">Read more</button>
+        <router-link :to="'/history'" class="bg-cyan-900 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded mt-12 text-center">Read more</router-link>
       </div>
     </div>
 

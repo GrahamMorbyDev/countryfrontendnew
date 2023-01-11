@@ -11,7 +11,7 @@
           </h1>
 
         </div>
-          <a href="#" class="mt-8 w-full bg-cyan-500 border border-transparent px-5 py-3 inline-flex items-center justify-center text-base font-medium rounded-md text-white hover:bg-cyan-700 sm:mt-10 sm:w-auto xl:mt-0">Tickets</a>
+          <a href="https://book.events/gaietybarsouthsea/2023-04-21/41956" class="mt-8 w-full bg-cyan-500 border border-transparent px-5 py-3 inline-flex items-center justify-center text-base font-medium rounded-md text-white hover:bg-cyan-700 sm:mt-10 sm:w-auto xl:mt-0">Tickets</a>
       </div>
     </div>
   </div>
