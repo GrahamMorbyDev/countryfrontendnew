@@ -6,7 +6,7 @@
       <div class="space-y-12">
         <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
           <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl text-gray-900">Artists</h2>
-          <p class="text-xl text-gray-900">Ornare sagittis, suspendisse in hendrerit quis. Sed dui aliquet lectus sit pretium egestas vel mattis neque.</p>
+          <p class="text-xl text-gray-900">Coming soon...</p>
         </div>
         <ul role="list" class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
           <li v-for="person in people" :key="person.name" class="rounded-lg bg-cyan-900 py-10 px-6 text-center xl:px-10 xl:text-left">
@@ -63,54 +63,7 @@ export default {
     data() {
         return {
         people: [
-            {
-                name: 'Graham Morby',
-                role: 'Singer - Songwriter',
-                imageUrl:
-                    '/tempArtist.jpg',
-            },
-            {
-                name: 'Graham Morby',
-                role: 'Singer - Songwriter',
-                imageUrl:
-                    '/tempArtist.jpg',
-            },
-            {
-                name: 'Graham Morby',
-                role: 'Singer - Songwriter',
-                imageUrl:
-                    '/tempArtist.jpg',
-            },
-            {
-                name: 'Graham Morby',
-                role: 'Singer - Songwriter',
-                imageUrl:
-                    '/tempArtist.jpg',
-            },
-            {
-                name: 'Graham Morby',
-                role: 'Singer - Songwriter',
-                imageUrl:
-                    '/tempArtist.jpg',
-            },
-            {
-                name: 'Graham Morby',
-                role: 'Singer - Songwriter',
-                imageUrl:
-                    '/tempArtist.jpg',
-            },
-            {
-                name: 'Graham Morby',
-                role: 'Singer - Songwriter',
-                imageUrl:
-                    '/tempArtist.jpg',
-            },
-            {
-                name: 'Graham Morby',
-                role: 'Singer - Songwriter',
-                imageUrl:
-                    '/tempArtist.jpg',
-            },
+           
 
             // More people...
         ]
