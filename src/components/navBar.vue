@@ -35,7 +35,7 @@
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
-              <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-cyan-500 text-white' : 'text-gray-300 hover:bg-cyan-500 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+              <RouterLink v-for="item in navigation" :key="item.name" :to="{ name: item.href}" :class="[this.state === item.name ? 'bg-cyan-500 text-white' : 'text-gray-300 hover:bg-cyan-500 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</RouterLink>
             </div>
           </div>
         </div>
@@ -87,18 +87,32 @@
   </Disclosure>
 </template>
 
-<script setup>
+<script>
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+export default {
+  components: {
+    Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems, Bars3Icon, BellIcon, XMarkIcon
+  },
+  created() {
+    this.state = this.$route.meta.state
+  },
+  data() {
+    return {
+      state: 1,
+      navigation: [
+        { name: 'Home', href: 'home', current: true },
+        { name: 'About', href: 'about', current: false },
+        { name: 'History', href: 'history', current: false },
+        { name: 'Artists', href: 'artists', current: false },
+        { name: 'News', href: 'blog', current: false },
+        { name: 'Media Links', href: 'media', current: false },
+        { name: 'Tickets', href: 'tickets', current: false },
+        //{ name: 'Store', href: '#', current: false },
+        { name: 'Contact Us', href: 'contact', current: false },
+      ]
+    };
+  },
+};
 
-const navigation = [
-  { name: 'Home', href: '/', current: true },
-  { name: 'About', href: '/about', current: false },
-  { name: 'History', href: '/history', current: false },
-  { name: 'Artists', href: '/artists', current: false },
-  { name: 'News', href: '/latest-news', current: false },
-  { name: 'Tickets', href: 'https://book.events/gaietybarsouthsea/2023-04-21/41956', current: false },
-  { name: 'Store', href: '#', current: false },
-  { name: 'Contact us', href: '/contact-us', current: false },
-]
 </script>
