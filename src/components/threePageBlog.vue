@@ -17,7 +17,7 @@
                 <p class="text-sm font-medium text-indigo-600">
                   
                 </p>
-                <a href="#" class="mt-2 block">
+                <a :href="'/news-page?id=' + post.id" class="mt-2 block">
                   <p class="text-xl font-semibold text-gray-900">{{ post.title }}</p>
                   <p class="mt-3 text-base text-gray-500">{{ post.description }}</p>
                 </a>
@@ -59,7 +59,7 @@
     },
     methods: { 
       getPosts() {
-        axios.get(this.api_url + 'api/blog?per_page=3', this.formData)
+        axios.get(this.api_url + '/api/blog?per_page=3', this.formData)
             .then(response => {
                 this.posts = response.data.records
             })

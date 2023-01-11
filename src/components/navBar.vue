@@ -105,7 +105,7 @@ export default {
         { name: 'About', href: 'about', current: false },
         { name: 'History', href: 'history', current: false },
         { name: 'Artists', href: 'artists', current: false },
-        { name: 'News', href: 'blog', current: false },
+        { name: 'News', href: 'blogs', current: false },
         { name: 'Media Links', href: 'media', current: false },
         { name: 'Tickets', href: 'tickets', current: false },
         //{ name: 'Store', href: '#', current: false },

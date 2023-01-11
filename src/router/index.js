@@ -144,7 +144,7 @@ const routes = [
   },
   {
     path: '/latest-news',
-    name: 'blog',
+    name: 'blogs',
     component: () => import('../views/BlogsMainPage.vue'),
     meta: {
       title: 'Country on the coast - Latest News',
