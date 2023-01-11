@@ -5,7 +5,7 @@
       <div class="mx-auto">
         <div class="relative shadow-xl sm:overflow-hidden w-full">
           <div class="absolute inset-0">
-            <img class="h-full w-full object-cover" src="@/assets/topbar.jpg" alt="Girl bound and gagged in a chair" />
+            <img class="h-full w-full object-cover" src="@/assets/topbar.jpg" alt="Country on the coast logo" />
             <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-cyan-800 mix-blend-multiply" />
           </div>
           <div class="relative px-4">
