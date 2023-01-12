@@ -143,7 +143,7 @@ const routes = [
   }
   },
   {
-    path: '/latest-news',
+    path: '/blogs',
     name: 'blogs',
     component: () => import('../views/BlogsMainPage.vue'),
     meta: {
