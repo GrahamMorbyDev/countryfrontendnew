@@ -3,13 +3,16 @@
 
     <navbar></navbar>
 
-    <div class="flex flex-row">
-      <div class="lg:inset-y-0 lg:left-0 lg:w-1/2">
-        <img class="w-full p-10" src="@/assets/homepage.png" alt="Country on the Coast was founded in 2018" />
+    <div class="grid grid-rows-1 grid-flow-col">
+      <div class="flex justify-center">
+        <img class="w-3/4 p-10" src="@/assets/homepage.png" alt="Country on the Coast was founded in 2018" />
       </div>
-      <div class="lg:inset-y-0 lg:left-0 lg:w-1/2">
-        <div class=" max-w-prose text-base pt-6 lg:mr-0">
-          <h3 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mt-10">Country on the Coast
+    </div>
+
+    <div class="grid grid-rows-1 grid-flow-col content-center">
+      <div class="flex justify-center text-center mb-6">
+        <div class="text-base text-center lg:mr-0 p-2 w-full">
+          <h3 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Country on the Coast
           </h3>
           <p class="prose prose-indigo mt-5">
             Welcome to the South Coast’s only indoor country music festival on a pier! Yep you read it right!<br>
@@ -18,12 +21,10 @@
             conjunction with The Gaiety Southsea in 2018.</p>
           <p class="prose prose-indigo mt-5">April 2019 saw the debut of the festival drawing in artists from across the
             UK and internationally and attendees from all over the UK</p>
-          <p class="prose prose-indigo mt-5 mb-5">As with all live music and events, Country on the Coast was hit by the
+          <p class="prose prose-indigo mt-5">As with all live music and events, Country on the Coast was hit by the
             global pandemic of 2020 but after 2 years of postponements and countless hours of effort
             , Country on the Coast 2022 went ahead and was a roaring success!</p>
-          <a href="https://book.events/gaietybarsouthsea/2023-04-21/41956"
-            class="bg-cyan-900 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded">Tickets</a>
-        </div>
+          </div>
       </div>
     </div>
 
