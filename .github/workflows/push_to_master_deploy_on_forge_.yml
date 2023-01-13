@@ -1,0 +1,19 @@
+name: Deploy To Forge when Push to Master 
+
+concurrency: production_deploy
+
+on:
+  push:
+    branches:
+      - master
+#  pull_request:
+#    branches:
+#      - master
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: deploy
+        run:  curl -X GET "https://forge.laravel.com/servers/644701/sites/1857386/deploy/http?token=aX0VGXlW0RaxqG9ouV2kWjMLqmthB6wtFMmgz6Kz"
