@@ -4,7 +4,7 @@
         <div class="relative">
       <div class="lg:absolute lg:inset-0">
         <div class="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
-          <img class="h-56 w-full object-cover lg:absolute lg:h-full" src="@/assets/media.jpg" alt="History of Country on the coast" />
+          <img class="h-56 w-full object-scale-down sm:object-cover lg:absolute lg:h-full" src="@/assets/media.jpg" alt="History of Country on the coast" />
         </div>
       </div>
       <div class="relative px-4 pt-12 pb-16 sm:px-6 sm:pt-16 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8">
