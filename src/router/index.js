@@ -160,7 +160,7 @@ const routes = [
   {
     path: '/tickets',
     name: 'tickets',
-    beforeEnter() {location.href = 'https://book.events/gaietybarsouthsea/2023-04-21/41956'}
+    beforeEnter() {location.href = 'https://book.events/gaietybarsouthsea/2024-04-13/42919?fbclid=IwAR08JG7MWg4TO7bk1W81L1Q_UHivMsQz0WCOv-0J_LmMwqMoLMqMplTxUhU'}
   },
 
   {

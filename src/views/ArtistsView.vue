@@ -1,52 +1,73 @@
 <template>
-    <div>
-        <Navbar></Navbar>
-        <div class="bg-white">
-    <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
-      <div class="space-y-12">
-        <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl text-gray-900">Artists</h2>
-          <p class="text-xl text-gray-900">Coming soon...</p>
-        </div>
-        <ul role="list" class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
-          <li v-for="person in people" :key="person.name" class="rounded-lg bg-cyan-900 py-10 px-6 text-center xl:px-10 xl:text-left">
-            <div class="space-y-6 xl:space-y-10">
-              <RouterLink :to="'/artist'">
-              <img class="mx-auto h-40 w-40 rounded-full xl:h-56 xl:w-56" :src="person.imageUrl" alt="" />
-              </RouterLink>
-              <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
-                <div class="space-y-1 text-lg font-medium leading-6">
-                  <h3 class="text-white">{{ person.name }}</h3>
-                  <p class="text-cyan-600">{{ person.role }}</p>
-                </div>
+  <div>
+    <Navbar></Navbar>
 
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a :href="person.twitterUrl" class="text-gray-400 hover:text-gray-300">
-                      <span class="sr-only">Twitter</span>
-                      <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a :href="person.linkedinUrl" class="text-gray-400 hover:text-gray-300">
-                      <span class="sr-only">LinkedIn</span>
-                      <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd" />
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+    <div class="bg-amber-50">
+      <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
+        <div class="space-y-12">
+          <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+            <img src="@/assets/banner.png" alt="">
+            <p class="mt-2 text-3xl font-bold leading-8 tracking-tight text-indigo-900 sm:text-4xl">Introducing the
+              Country on the Coast Launch Party!</p>
+            <p class="mt-8 text-lg text-gray-9000">
+              The excitement is building for Country on the Coast 2024, and we've got some thrilling
+              news to share. In response to your valuable feedback, this year, we're introducing
+              something special: the Country on the Coast Launch Party!
+            </p>
+            <p class="mt-8 text-lg text-gray-900">
+              On Friday, April 12th, 2024, we're kicking off the Country on the Coast weekend with a
+              bang at the all-new Country on the Coast Launch Party and VIP event. We've chosen an
+              exciting new venue to make this occasion even more memorable - the Staggeringly Good
+              Brewery, another fantastic addition to the Portsmouth scene, known for its in-house
+              brewery and fantastic atmosphere. In collaboration with Scarlet River PR, we are
+              thrilled to be able to offer this amazing new addition to the Country on the Coast
+              weekend!
+            </p>
+            <p class="mt-2 text-1xl font-bold leading-8 tracking-tight text-indigo-900 sm:text-2xl">What to Expect</p>
+
+            <p class="mt-8 text-lg text-gray-900">
+              <span class="text-indigo-900 font-bold">Live Performances:</span> Get ready to be serenaded by some of the
+              incredible artists who
+              will be gracing the Country on the Coast stage over the weekend. It's a sneak peek
+              into the musical magic that awaits you at the festival.
+            </p>
+
+            <p class="mt-8 text-lg text-gray-900">
+              <span class="text-indigo-900 font-bold">VIP Event:</span> For those seeking an exclusive experience, our VIP
+              event begins at 6pm,
+              offering a chance to mingle with artists, enjoy special amenities, and immerse
+              yourself in the world of country music. Limited tickets available to be purchased
+              alongside the Launch Party
+            </p>
+
+            <p class="mt-8 text-lg text-gray-900">
+              <span class="text-indigo-900 font-bold">Launch Party:</span> The main event, the Country on the Coast Launch
+              Party, kicks off at
+              7.30pm. It's a night of music, fun, and community that's open to all. General
+              tickets are available for this part of the evening without the VIP bolt on.
+              Artist announcements coming soon!
+            </p>
+
+            <p class="mt-8 mb-8 text-lg text-gray-900">
+              Get Your Tickets: Tickets for the VIP event, Launch Party, and general admission
+              can be
+              <a href="https://www.skiddle.com/whats-on/Portsmouth/Staggeringly-Good-Brewery/Country-on-the-Coast-Launch-Party/36654557/"
+                target="_blank" class="text-indigo-900">purchased here</a>.
+              Be sure to secure your spot for this unforgettable evening.
+            </p>
+            <div class="pt-8">
+              <a href="https://www.skiddle.com/whats-on/Portsmouth/Staggeringly-Good-Brewery/Country-on-the-Coast-Launch-Party/36654557/"
+                target="_blank" class="bg-pink-700 text-white font-bold py-4 px-4 rounded">
+                Get Launch Party Tickets
+              </a>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
+      <footerBottomVue></footerBottomVue>
     </div>
-    <footerBottomVue></footerBottomVue>
+
   </div>
-</div>
 </template>
   
 <script>
@@ -55,19 +76,19 @@ import threePageBlogVue from '@/components/threePageBlog.vue';
 import footerBottomVue from '@/components/footerBottom.vue';
 
 export default {
-    components: {
-        Navbar,
-        threePageBlogVue,
-        footerBottomVue
-    },
-    data() {
-        return {
-        people: [
-           
+  components: {
+    Navbar,
+    threePageBlogVue,
+    footerBottomVue
+  },
+  data() {
+    return {
+      people: [
 
-            // More people...
-        ]
-        }
+
+        // More people...
+      ]
     }
+  }
 }
 </script>
